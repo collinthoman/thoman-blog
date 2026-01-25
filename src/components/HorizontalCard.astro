@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  pubDate: Date;
+  heroImage?: ImageMetadata;
+  badge?: string;
+}
+
+const { title, description, href, pubDate, heroImage, badge } = Astro.props;
+---
+
+<a href={href} class="card card-side bg-base-100 shadow-xl hover:shadow-2xl transition-shadow mb-6 flex-col md:flex-row">
+  {heroImage && (
+    <figure class="md:w-72 shrink-0">
+      <Image
+        src={heroImage}
+        alt={title}
+        width={288}
+        height={160}
+        class="h-48 md:h-full w-full object-cover"
+      />
+    </figure>
+  )}
+  <div class="card-body">
+    <div class="flex items-center gap-2">
+      <h2 class="card-title text-base-content">{title}</h2>
+      {badge && <div class="badge badge-secondary">{badge}</div>}
+    </div>
+    <p class="text-base-content/70 text-sm">
+      <FormattedDate date={pubDate} />
+    </p>
+    <p class="text-base-content/80 line-clamp-2">{description}</p>
+    <div class="card-actions justify-end">
+      <span class="text-primary text-sm font-medium">Read more →</span>
+    </div>
+  </div>
+</a>

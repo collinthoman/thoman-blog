@@ -1,0 +1,71 @@
+---
+import { SITE_TITLE } from '../consts';
+import SideBarMenu from './SideBarMenu.astro';
+import SideBarFooter from './SideBarFooter.astro';
+
+interface Props {
+  sideBarActiveItem?: string;
+}
+
+const { sideBarActiveItem } = Astro.props;
+
+const NAV_ITEMS = [
+  { name: 'Home', href: '/' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'About', href: '/about' },
+];
+---
+
+<div class="bg-base-200 min-h-full w-80 p-4 flex flex-col">
+  <!-- Profile Section -->
+  <div class="flex flex-col items-center py-6">
+    <div class="avatar mb-4">
+      <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <img src="/favicon.svg" alt="Profile" class="bg-base-100" />
+      </div>
+    </div>
+    <h2 class="text-2xl font-bold text-base-content">{SITE_TITLE}</h2>
+    <p class="text-base-content/70 text-center mt-2">Welcome to my blog</p>
+  </div>
+
+  <!-- Navigation -->
+  <SideBarMenu items={NAV_ITEMS} activeItem={sideBarActiveItem} />
+
+  <!-- Theme Switcher -->
+  <div class="mt-4 px-2">
+    <select id="theme-select" class="select select-bordered select-xs w-28 text-xs" data-choose-theme>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="cupcake">Cupcake</option>
+      <option value="dracula">Dracula</option>
+      <option value="night">Night</option>
+      <option value="winter">Winter</option>
+      <option value="nord">Nord</option>
+      <option value="sunset">Sunset</option>
+    </select>
+  </div>
+
+  <!-- Spacer -->
+  <div class="flex-grow"></div>
+
+  <!-- Footer -->
+  <SideBarFooter />
+</div>
+
+<script is:inline>
+  (function() {
+    // Theme switcher logic
+    const themeSelect = document.getElementById('theme-select');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (themeSelect) {
+      themeSelect.value = currentTheme;
+    }
+
+    themeSelect?.addEventListener('change', (e) => {
+      const theme = e.target.value;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+  })();
+</script>

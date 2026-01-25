@@ -1,0 +1,29 @@
+---
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  items: NavItem[];
+  activeItem?: string;
+}
+
+const { items, activeItem } = Astro.props;
+---
+
+<ul class="menu bg-base-200 rounded-box w-full">
+  {items.map((item) => (
+    <li>
+      <a
+        href={item.href}
+        class:list={[
+          'text-base-content',
+          { 'active bg-primary text-primary-content': activeItem === item.name }
+        ]}
+      >
+        {item.name}
+      </a>
+    </li>
+  ))}
+</ul>

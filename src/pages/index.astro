@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HorizontalCard from '../components/HorizontalCard.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} sideBarActiveItem="Home">
+  <div class="pb-8">
+    <h1 class="text-4xl font-bold text-base-content">Hey there!</h1>
+    <p class="py-4 text-base-content/80 text-lg">
+      Welcome to my blog. I write about technology, programming, and things I find interesting.
+      Feel free to explore my latest posts below or check out the full blog archive.
+    </p>
+  </div>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2 class="text-2xl font-bold text-base-content mb-6">Latest Posts</h2>
+    {posts.map((post) => (
+      <HorizontalCard
+        title={post.data.title}
+        description={post.data.description}
+        href={`/blog/${post.id}/`}
+        pubDate={post.data.pubDate}
+        heroImage={post.data.heroImage}
+      />
+    ))}
+  </section>
+
+  <div class="flex justify-center mt-8">
+    <a href="/blog" class="btn btn-primary">
+      View All Posts
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg>
+    </a>
+  </div>
+</BaseLayout>
