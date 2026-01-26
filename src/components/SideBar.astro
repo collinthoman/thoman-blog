@@ -2,6 +2,7 @@
 import { SITE_TITLE } from '../consts';
 import SideBarMenu from './SideBarMenu.astro';
 import SideBarFooter from './SideBarFooter.astro';
+import profileImage from '../assets/profile.png';
 
 interface Props {
   sideBarActiveItem?: string;
@@ -12,6 +13,7 @@ const { sideBarActiveItem } = Astro.props;
 const NAV_ITEMS = [
   { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
+  { name: 'CV', href: '/cv' },
   { name: 'About', href: '/about' },
 ];
 ---
@@ -20,12 +22,12 @@ const NAV_ITEMS = [
   <!-- Profile Section -->
   <div class="flex flex-col items-center py-6">
     <div class="avatar mb-4">
-      <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="/favicon.svg" alt="Profile" class="bg-base-100" />
+      <div class="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-base-200">
+        <img src={profileImage.src} alt="Collin Thoman" class="object-cover object-top" />
       </div>
     </div>
     <h2 class="text-2xl font-bold text-base-content">{SITE_TITLE}</h2>
-    <p class="text-base-content/70 text-center mt-2">Welcome to my blog</p>
+    <!-- <p class="text-base-content/70 text-center mt-2">Welcome to my blog</p> -->
   </div>
 
   <!-- Navigation -->
