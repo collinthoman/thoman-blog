@@ -3,45 +3,164 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<BaseLayout title={`About | ${SITE_TITLE}`} description="About me" sideBarActiveItem="About">
-  <div class="pb-8">
+<BaseLayout title={`About | ${SITE_TITLE}`} description="About Collin Thoman - IT leader, amateur radio operator, and technology enthusiast based in Seattle" sideBarActiveItem="About">
+  <div class="pb-2">
     <h1 class="text-4xl font-bold text-base-content">About Me</h1>
+    <p class="text-lg text-base-content/70 mt-1">IT leader by day, tinkerer by nature</p>
   </div>
 
   <div class="divider"></div>
 
-  <div class="prose prose-lg max-w-none">
-    <p>
-      Welcome to my corner of the internet! I'm passionate about technology,
-      software development, and sharing what I learn along the way.
-    </p>
+  <!-- Intro -->
+  <section class="mb-10">
+    <div class="prose prose-lg max-w-none">
+      <p class="text-base-content/80 leading-relaxed">
+        I'm Collin &mdash; an IT leader based in Seattle with 12+ years of experience building and managing
+        technology teams. For me, technology isn't just a career; it's a genuine passion. The same curiosity
+        that drives me to architect enterprise infrastructure at work has me tinkering with Home Assistant,
+        standing up a private cloud, or building this very blog with Claude Code on the weekends.
+      </p>
+      <p class="text-base-content/80 leading-relaxed">
+        I started my career at the Sno-Isle Skills Center studying Computers, Servers &amp; Networking, where I was
+        nominated and inducted into the <strong>National Technical Honor Society</strong>. From there, I went through
+        the ranks &mdash; Geek Squad field engineer, MSP consultant, system administrator &mdash; until I was promoted
+        into a management role that was created based on my performance. That journey taught me that great IT
+        leadership means staying close to the technical work while lifting the people around you.
+      </p>
+    </div>
+  </section>
 
-    <h2>What I Do</h2>
-    <p>
-      I write about programming, web development, and other tech topics that
-      interest me. This blog is a place where I document my learnings, share
-      tutorials, and discuss ideas.
-    </p>
+  <!-- What Drives Me -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold text-base-content mb-4">What Drives Me</h2>
+    <div class="prose prose-lg max-w-none">
+      <p class="text-base-content/80 leading-relaxed">
+        Community, education, and professional development matter deeply to me &mdash; both inside and outside the
+        workplace. I believe in investing in the next generation of IT professionals, which is why I serve on the
+        <strong>Program Advisory Committee (PAC)</strong> for the Sno-Isle Skills Center's CSN program. I was recruited
+        by my former teacher to join this committee of industry leaders who advise on curriculum and help shape
+        the program that gave me my own start. It's one of the most rewarding things I do.
+      </p>
+    </div>
+  </section>
 
-    <h2>Get In Touch</h2>
-    <p>
-      Feel free to reach out on social media or drop me a message.
-      I'm always happy to connect with fellow developers and tech enthusiasts.
-    </p>
+  <!-- Outside the Office -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold text-base-content mb-4">Outside the Office</h2>
 
-    <div class="flex gap-4 mt-6">
-      <a href="https://github.com" target="_blank" class="btn btn-outline">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-base-200 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-base font-semibold text-base-content">Overlanding &amp; Dispersed Camping</h3>
+        </div>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          There's nothing like loading up and heading off-grid to explore the Pacific Northwest. Dispersed
+          camping is my reset button &mdash; a way to disconnect from the busy world and reconnect with
+          nature, whether solo or with friends.
+        </p>
+      </div>
+
+      <div class="bg-base-200 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0" />
+          </svg>
+          <h3 class="text-base font-semibold text-base-content">Amateur Radio</h3>
+        </div>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          Ham radio led me to volunteer with the Snohomish County Department of Emergency Management
+          through the Auxiliary Communications Service. The incident response and management skills
+          I've built there translate directly into how I handle IT incidents and crisis situations.
+        </p>
+      </div>
+
+      <div class="bg-base-200 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <h3 class="text-base font-semibold text-base-content">Tech Projects</h3>
+        </div>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          My career and personal passion for technology are one and the same. Off the clock, you'll find me
+          running Home Assistant, experimenting with private cloud setups, or building sites like this one
+          to explore new tools and frameworks.
+        </p>
+      </div>
+
+      <div class="bg-base-200 rounded-xl p-5">
+        <div class="flex items-center gap-2 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <h3 class="text-base font-semibold text-base-content">Hosting &amp; Board Games</h3>
+        </div>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          I love cooking and hosting friends for board game nights. Good food, good company, and a
+          little friendly competition &mdash; that's a perfect evening.
+        </p>
+      </div>
+
+      <div class="bg-base-200 rounded-xl p-5 md:col-span-2">
+        <div class="flex items-center gap-2 mb-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+          </svg>
+          <h3 class="text-base font-semibold text-base-content">Music &amp; Festivals</h3>
+        </div>
+        <p class="text-sm text-base-content/70 leading-relaxed">
+          When I'm not in the backcountry or behind a keyboard, you might find me at a rave or music
+          festival. It's a completely different kind of energy, and a great way to recharge.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Next -->
+  <section class="mb-10">
+    <h2 class="text-2xl font-bold text-base-content mb-4">What's Next</h2>
+    <div class="prose prose-lg max-w-none">
+      <p class="text-base-content/80 leading-relaxed">
+        I'm currently learning Dutch and exploring IT leadership opportunities in the Netherlands and
+        Belgium. With established connections in the Benelux region and a strong commitment to cultural
+        integration, I'm excited about the possibility of bringing my experience to the EMEA market.
+      </p>
+      <p class="text-base-content/80 leading-relaxed">
+        This blog is where I share what I'm learning along the way &mdash; from technical deep-dives
+        and project write-ups to thoughts on IT leadership and the occasional adventure story.
+      </p>
+    </div>
+  </section>
+
+  <!-- Get In Touch -->
+  <section class="mb-4">
+    <h2 class="text-2xl font-bold text-base-content mb-4">Get In Touch</h2>
+    <p class="text-base-content/70 mb-4">
+      I'm always happy to connect with fellow technologists, IT leaders, and anyone who shares similar interests.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a href="mailto:Collin.Thoman@gmail.com" class="btn btn-outline btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/collinthoman/" target="_blank" class="btn btn-outline btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/collinthoman" target="_blank" class="btn btn-outline btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
         GitHub
       </a>
-      <a href="https://twitter.com" target="_blank" class="btn btn-outline">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-        Twitter
-      </a>
     </div>
-  </div>
+  </section>
+
 </BaseLayout>
