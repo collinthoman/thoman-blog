@@ -7,7 +7,7 @@ Personal blog/portfolio built with Astro, Tailwind CSS, and DaisyUI. Designed to
 - **Framework**: Astro 5.x with MDX support
 - **Styling**: Tailwind CSS 4.x + DaisyUI 5.x
 - **Themes**: 8 DaisyUI themes (light, dark, cupcake, dracula, night, winter, nord, sunset)
-- **Comments**: Giscus (GitHub Discussions) - needs configuration
+- **Comments**: Giscus (GitHub Discussions) - component ready, needs repo credentials
 - **RSS**: Built-in at /rss.xml
 - **Deployment**: Cloudflare Pages (adapter installed)
 
@@ -26,23 +26,29 @@ src/
 │   ├── SideBarMenu.astro   # Navigation menu items
 │   ├── SideBarFooter.astro # Social links, copyright
 │   ├── HorizontalCard.astro # Blog post cards
-│   ├── Comments.astro      # Giscus comments (needs setup)
-│   └── FormattedDate.astro # Date formatting
+│   ├── Comments.astro      # Giscus comments (needs repo credentials)
+│   ├── FormattedDate.astro # Date formatting
+│   ├── Header.astro        # (unused legacy template component)
+│   ├── HeaderLink.astro    # (unused legacy template component)
+│   ├── ThemeToggle.astro   # (unused legacy template component)
+│   └── Footer.astro        # (unused legacy template component)
 ├── layouts/
 │   ├── BaseLayout.astro    # Main layout with sidebar drawer
 │   └── BlogPost.astro      # Individual blog post layout
 ├── pages/
-│   ├── index.astro         # Home page
+│   ├── index.astro         # Home page (Dutch intro: "Ik ben Collin Thoman")
 │   ├── about.astro         # About page
-│   ├── cv.astro            # CV/Resume page
+│   ├── cv.astro            # CV/Resume page (fully populated)
 │   └── blog/               # Blog listing and posts
 ├── content/
 │   └── blog/               # Markdown/MDX blog posts
 ├── styles/
 │   └── global.css          # Tailwind + DaisyUI config
+├── assets/
+│   └── profile.png         # Profile image for sidebar
 └── consts.ts               # Site title and description
 public/
-└── cv.pdf                  # (Add your PDF resume here for download button)
+└── cv.pdf                  # Resume PDF (download button on CV page)
 ```
 
 ## Navigation
@@ -100,7 +106,7 @@ Post content here...
 ## Customization Points
 
 1. **Site info**: Edit `src/consts.ts` for title/description
-2. **Profile image**: Replace in `src/components/SideBar.astro`
+2. **Profile image**: Replace `src/assets/profile.png` (referenced in `src/components/SideBar.astro`)
 3. **Social links**: Edit `src/components/SideBarFooter.astro`
 4. **Themes**: Modify theme list in `src/styles/global.css`
 5. **Comments**: Configure Giscus in `src/components/Comments.astro`
@@ -108,21 +114,19 @@ Post content here...
 
 ## Deployment (Cloudflare Pages)
 
-1. Push to GitHub: `git push origin main`
-2. Go to Cloudflare Dashboard → Workers & Pages → Create
-3. Connect to GitHub repo `collinthoman/thoman-blog`
-4. Build settings:
-   - Build command: `npm run build`
-   - Build output: `dist`
-5. After deploy, update `site` in `astro.config.mjs` to your URL
+- **Live at**: https://thoman.dev
+- **Auto-deploy**: Connected to GitHub repo `collinthoman/thoman-blog` — pushes to `main` trigger builds automatically
+- **Build command**: `npm run build`
+- **Build output**: `dist`
 
 ## Pending Setup
 
-- [ ] Push code to GitHub (credentials issue with pup-kin account resolved by clearing Windows Credential Manager)
-- [ ] Deploy to Cloudflare Pages
-- [ ] Configure Giscus comments (requires GitHub repo with Discussions enabled)
-- [ ] Add custom profile image to sidebar
-- [ ] Update social media links
-- [ ] Fill in CV with real information
-- [ ] Add cv.pdf to public/ folder
+- [x] Push code to GitHub
+- [x] Add custom profile image to sidebar
+- [x] Update social media links
+- [x] Fill in CV with real information
+- [x] Add cv.pdf to public/ folder
+- [x] Deploy to Cloudflare Pages (live at https://thoman.dev)
+- [ ] Configure Giscus comments (component exists but has placeholder credentials in `src/components/Comments.astro`)
 - [ ] Create Projects page
+- [ ] Remove unused legacy components (`Header.astro`, `HeaderLink.astro`, `ThemeToggle.astro`, `Footer.astro`) or repurpose them

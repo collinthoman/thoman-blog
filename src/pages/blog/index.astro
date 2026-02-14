@@ -27,6 +27,7 @@ const posts = (await getCollection('blog')).sort(
         href={`/blog/${post.id}/`}
         pubDate={post.data.pubDate}
         heroImage={post.data.heroImage}
+        tags={post.data.tags}
       />
     ))}
   </section>
