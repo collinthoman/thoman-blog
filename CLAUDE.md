@@ -26,12 +26,8 @@ src/
 │   ├── SideBarMenu.astro   # Navigation menu items
 │   ├── SideBarFooter.astro # Social links, copyright
 │   ├── HorizontalCard.astro # Blog post cards
-│   ├── Comments.astro      # Giscus comments (needs repo credentials)
-│   ├── FormattedDate.astro # Date formatting
-│   ├── Header.astro        # (unused legacy template component)
-│   ├── HeaderLink.astro    # (unused legacy template component)
-│   ├── ThemeToggle.astro   # (unused legacy template component)
-│   └── Footer.astro        # (unused legacy template component)
+│   ├── Comments.astro      # Giscus comments (GitHub Discussions)
+│   └── FormattedDate.astro # Date formatting
 ├── layouts/
 │   ├── BaseLayout.astro    # Main layout with sidebar drawer
 │   └── BlogPost.astro      # Individual blog post layout
@@ -129,4 +125,4 @@ Post content here...
 - [x] Deploy to Cloudflare Pages (live at https://thoman.dev)
 - [x] Configure Giscus comments (component exists but has placeholder credentials in `src/components/Comments.astro`)
 - [ ] Create Projects page
-- [ ] Remove unused legacy components (`Header.astro`, `HeaderLink.astro`, `ThemeToggle.astro`, `Footer.astro`) or repurpose them
+- [x] Remove unused legacy components (`Header.astro`, `HeaderLink.astro`, `ThemeToggle.astro`, `Footer.astro`)
