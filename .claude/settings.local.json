@@ -7,7 +7,12 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(npm audit:*)",
+      "Bash(npm view:*)",
+      "Bash(findstr:*)",
+      "Bash(dir:*)"
     ]
   }
 }

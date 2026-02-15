@@ -127,6 +127,6 @@ Post content here...
 - [x] Fill in CV with real information
 - [x] Add cv.pdf to public/ folder
 - [x] Deploy to Cloudflare Pages (live at https://thoman.dev)
-- [ ] Configure Giscus comments (component exists but has placeholder credentials in `src/components/Comments.astro`)
+- [x] Configure Giscus comments (component exists but has placeholder credentials in `src/components/Comments.astro`)
 - [ ] Create Projects page
 - [ ] Remove unused legacy components (`Header.astro`, `HeaderLink.astro`, `ThemeToggle.astro`, `Footer.astro`) or repurpose them
