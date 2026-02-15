@@ -1,15 +1,17 @@
 ---
-// Giscus comments component
-// To set up Giscus:
-// 1. Go to https://giscus.app
-// 2. Connect your GitHub repository
-// 3. Enable Discussions in your repo settings
-// 4. Update the values below with your repo info
+import { defaultLang, type Lang } from '../i18n/config';
+import { t } from '../i18n/utils';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = defaultLang } = Astro.props;
 ---
 
 <section class="mt-12 pt-8 border-t border-base-300">
-  <h2 class="text-2xl font-bold text-base-content mb-6">Comments</h2>
-  <div id="giscus-container"></div>
+  <h2 class="text-2xl font-bold text-base-content mb-6">{t(lang, 'ui', 'comments')}</h2>
+  <div id="giscus-container" data-lang={lang}></div>
 </section>
 
 <script is:inline>
@@ -24,19 +26,21 @@
     const container = document.getElementById('giscus-container');
     if (!container || container.hasChildNodes()) return;
 
+    const giscusLang = container.getAttribute('data-lang') || 'en';
+
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
     script.setAttribute('data-repo', 'collinthoman/thoman-blog');
     script.setAttribute('data-repo-id', 'R_kgDORBKajw');
     script.setAttribute('data-category', 'Announcements');
     script.setAttribute('data-category-id', 'DIC_kwDORBKaj84C2a1_');
-    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-mapping', 'title');
     script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'top');
     script.setAttribute('data-theme', getGiscusTheme());
-    script.setAttribute('data-lang', 'en');
+    script.setAttribute('data-lang', giscusLang);
     script.setAttribute('data-loading', 'lazy');
     script.crossOrigin = 'anonymous';
     script.async = true;

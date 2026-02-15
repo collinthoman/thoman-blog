@@ -12,7 +12,22 @@ export default defineConfig({
   site: 'https://thoman.dev',
   output: 'static',
   adapter: cloudflare(),
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: { en: 'en', nl: 'nl' },
+      },
+    }),
+  ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'nl'],
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
 
   vite: {
     plugins: [tailwindcss()],

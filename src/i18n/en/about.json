@@ -1,0 +1,43 @@
+{
+  "title": "About Me",
+  "subtitle": "IT leader by day, tinkerer by nature",
+  "description": "About Collin Thoman - IT leader, amateur radio operator, and technology enthusiast based in Seattle",
+  "intro1": "I'm Collin \u2014 an IT leader based in Seattle with 12+ years of experience building and managing technology teams. For me, technology isn't just a career; it's a genuine passion. The same curiosity that drives me to architect enterprise infrastructure at work has me tinkering with Home Assistant, standing up a private cloud, or building this very blog with Claude Code on the weekends.",
+  "intro2": "I started my career at the Sno-Isle Skills Center studying Computers, Servers & Networking, where I was nominated and inducted into the <strong>National Technical Honor Society</strong>. From there, I went through the ranks \u2014 Geek Squad field engineer, MSP consultant, system administrator \u2014 until I was promoted into a management role that was created based on my performance. That journey taught me that great IT leadership means staying close to the technical work while lifting the people around you.",
+  "whatDrivesMe": {
+    "heading": "What Drives Me",
+    "text": "Community, education, and professional development matter deeply to me \u2014 both inside and outside the workplace. I believe in investing in the next generation of IT professionals, which is why I serve on the <strong>Program Advisory Committee (PAC)</strong> for the Sno-Isle Skills Center's CSN program. I was recruited by my former teacher to join this committee of industry leaders who advise on curriculum and help shape the program that gave me my own start. It's one of the most rewarding things I do."
+  },
+  "outsideOffice": {
+    "heading": "Outside the Office",
+    "overlanding": {
+      "title": "Overlanding & Dispersed Camping",
+      "text": "There's nothing like loading up and heading off-grid to explore the Pacific Northwest. Dispersed camping is my reset button \u2014 a way to disconnect from the busy world and reconnect with nature, whether solo or with friends."
+    },
+    "radio": {
+      "title": "Amateur Radio",
+      "text": "Ham radio led me to volunteer with the Snohomish County Department of Emergency Management through the Auxiliary Communications Service. The incident response and management skills I've built there translate directly into how I handle IT incidents and crisis situations."
+    },
+    "tech": {
+      "title": "Tech Projects",
+      "text": "My career and personal passion for technology are one and the same. Off the clock, you'll find me running Home Assistant, experimenting with private cloud setups, or building sites like this one to explore new tools and frameworks."
+    },
+    "hosting": {
+      "title": "Hosting & Board Games",
+      "text": "I love cooking and hosting friends for board game nights. Good food, good company, and a little friendly competition \u2014 that's a perfect evening."
+    },
+    "music": {
+      "title": "Music & Festivals",
+      "text": "When I'm not in the backcountry or behind a keyboard, you might find me at a rave or music festival. It's a completely different kind of energy, and a great way to recharge."
+    }
+  },
+  "whatsNext": {
+    "heading": "What's Next",
+    "text1": "I'm currently learning Dutch and exploring IT leadership opportunities in the Netherlands and Belgium. With established connections in the Benelux region and a strong commitment to cultural integration, I'm excited about the possibility of bringing my experience to the EMEA market.",
+    "text2": "This blog is where I share what I'm learning along the way \u2014 from technical deep-dives and project write-ups to thoughts on IT leadership and the occasional adventure story."
+  },
+  "getInTouch": {
+    "heading": "Get In Touch",
+    "text": "I'm always happy to connect with fellow technologists, IT leaders, and anyone who shares similar interests."
+  }
+}

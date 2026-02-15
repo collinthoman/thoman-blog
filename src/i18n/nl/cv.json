@@ -1,0 +1,133 @@
+{
+  "title": "Collin Thoman",
+  "jobTitle": "IT Service Management Leider",
+  "description": "Collin Thoman - IT Service Management Leider",
+  "location": "Seattle, WA",
+  "glance": {
+    "years": { "value": "12+", "label": "Jaar in IT" },
+    "users": { "value": "200+", "label": "Ondersteunde gebruikers" },
+    "budget": { "value": "$2,5M", "label": "Beheerd budget" },
+    "uptime": { "value": "99,9%", "label": "Uptime gehandhaafd" }
+  },
+  "about": {
+    "heading": "Over mij",
+    "text1": "Ik bouw en leid IT-teams die echte bedrijfswaarde leveren. In meer dan 12 jaar ben ik gegroeid van hands-on engineering naar management, waarbij ik altijd dicht genoeg bij het technische werk ben gebleven om weloverwogen beslissingen te nemen en effectief te begeleiden. Mijn aanpak combineert ITIL-discipline met agile flexibiliteit \u2014 ik hecht waarde aan servicekwaliteit, beveiligingshouding en het cre\u00ebren van omgevingen waar mensen hun beste werk leveren.",
+    "text2": "Momenteel leer ik Nederlands en verken ik IT-leiderschapskansen in de regio Nederland/Belgi\u00eb en Seattle. Met bestaande connecties in de Benelux en een sterke toewijding aan culturele integratie, ben ik voorbereid op een transitie naar de EMEA-markt."
+  },
+  "experience": {
+    "heading": "Werkervaring",
+    "keyAccomplishments": "Belangrijkste prestaties",
+    "jobs": [
+      {
+        "title": "Information Technology Manager",
+        "dates": "Jul 2021 \u2013 Nov 2025",
+        "company": "Seed IP Law Group",
+        "location": "Seattle, WA",
+        "summary": "Leidde een team van zes medewerkers op het gebied van helpdesk, systemen en beveiliging voor een advocatenkantoor met 186 medewerkers. Verantwoordelijk voor de volledige levenscyclus van servicelevering, het beveiligingsprogramma en het jaarlijkse IT-budget van $2,5M, terwijl ik samenwerkte met het management om technologie-investeringen af te stemmen op de bedrijfsstrategie.",
+        "accomplishments": [
+          "ITIL-afgestemde servicecatalogus, SLA-framework en wijzigingsbeheerprocessen opgezet die de slagingspercentages van implementaties meetbaar verbeterden",
+          "Meerlaagse beveiligingsstack ge\u00efmplementeerd (CrowdStrike EDR, Rapid7 SIEM, Mimecast, Cisco Meraki) waardoor het kantoor beveiligingsaudits van cli\u00ebnten kon doorstaan en nieuwe omzet kon genereren",
+          "Tevredenheidsenqu\u00eates ge\u00efntroduceerd in Jira Service Management \u2014 4,8/5 beoordeling behaald en reactietijden met 25% verbeterd",
+          "Trainingsprogramma's en een kennisbank voor het IT-team ontwikkeld, ter ondersteuning van opvolgingsplanning en professionele groei",
+          "Leveranciersrelaties, contractonderhandelingen en technologie-inkoop beheerd, met kostenbesparingen bij verlengingen"
+        ]
+      },
+      {
+        "title": "Systeembeheerder",
+        "dates": "Aug 2018 \u2013 Jul 2021",
+        "company": "Seed IP Law Group",
+        "location": "Seattle, WA",
+        "summary": "Beheerde bedrijfsinfrastructuur tijdens snelle groei (140 naar 186 gebruikers) en de noodovergang naar thuiswerken tijdens COVID-19. Prestaties in deze rol leidden tot het cre\u00ebren van de IT Manager-positie.",
+        "accomplishments": [
+          "Unified communications-migratie geleid van on-prem Cisco naar Zoom Phone/Meetings/Chat, met 100% adoptie door hands-on training en verandermanagement",
+          "Verouderde VPN- en DNS-beveiliging (Pulse Secure, Cisco Umbrella) vervangen door Cloudflare Zero Trust, waarmee externe toegang gemoderniseerd werd",
+          "Gemigreerd van Zendesk naar Jira Service Management & Confluence met ITIL-afgestemde kennisbanken, waarmee de gemiddelde oplostijd met 10-15 minuten werd verkort",
+          "Hybride cloudomgeving ontworpen (AWS EC2/VPC + Azure) met site-to-site VPN en redundante domeincontrollers voor BCP/DR",
+          "Serverpark geconsolideerd van 110 naar 80 door strategische optimalisatie, waarmee operationele kosten werden verlaagd",
+          "Noodovergang naar 100% thuiswerken voor 186 medewerkers tijdens COVID-19 geleid, gebruikmakend van pre-pandemie hardwarestandaardisatie"
+        ]
+      },
+      {
+        "title": "IT Support Engineer",
+        "dates": "Dec 2015 \u2013 Aug 2018",
+        "company": "Nuvodia",
+        "location": "Spokane, WA",
+        "summary": "Leverde managed IT-diensten en consultancy aan meerdere klantorganisaties. Fungeerde als primaire on-site engineer en vertrouwde IT-adviseur, waarbij ik alles afhandelde van Windows Server- en SharePoint-beheer tot MDM-implementaties en automatiseringsscripts.",
+        "accomplishments": [
+          "Documentatie- en kennisbeheersystemen opgezet die teamschaalbaarheid over klantprojecten mogelijk maakten",
+          "Automatiseringsscripts gemaakt voor software-implementaties, waardoor implementatietijd en handmatige fouten werden verminderd"
+        ]
+      },
+      {
+        "title": "IT Field Engineer / Evenementmanager",
+        "dates": "Aug 2010 \u2013 Jan 2016",
+        "company": "Geek Squad \u2013 Best Buy",
+        "location": "Regio Seattle",
+        "summary": "Begonnen in residenti\u00eble en MKB IT-ondersteuning, daarna doorgegroeid naar het managen van regionale technologie-educatie-evenementen. Teams van 20-35 tijdelijke medewerkers geworven en geleid voor evenementen met tot 200 jonge deelnemers, en partnerschappen opgebouwd met non-profitorganisaties in de regio.",
+        "accomplishments": []
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Vaardigheden",
+    "categories": [
+      {
+        "name": "Cloud & Infrastructuur",
+        "items": ["AWS (EC2, VPC, S3)", "Azure", "VMware ESXi/vCenter", "Hybride Cloud"]
+      },
+      {
+        "name": "Beveiliging & Compliance",
+        "items": ["Cloudflare Zero Trust", "CrowdStrike EDR", "Rapid7 IDR", "Mimecast", "Intune"]
+      },
+      {
+        "name": "Servicebeheer",
+        "items": ["ITIL", "Agile / Scrum", "Jira Service Management", "Confluence", "Zendesk"]
+      },
+      {
+        "name": "Samenwerking & Productiviteit",
+        "items": ["Microsoft 365", "Exchange Online", "SharePoint", "Zoom", "Power Platform", "iManage DMS"]
+      },
+      {
+        "name": "Netwerken",
+        "items": ["Cisco Meraki", "Cloudflare", "VPN / SD-WAN"]
+      },
+      {
+        "name": "Leiderschap",
+        "items": ["Teamontwikkeling", "Strategische planning", "Budgetbeheer", "Leveranciersrelaties", "Verandermanagement"]
+      }
+    ]
+  },
+  "education": {
+    "heading": "Opleiding",
+    "items": [
+      {
+        "name": "Information Technology Management & Administration",
+        "institution": "Western Governors University",
+        "dates": "2014 \u2013 2018",
+        "honor": ""
+      },
+      {
+        "name": "Computers, Servers & Networking",
+        "institution": "Sno-Isle Skills Center",
+        "dates": "2006 \u2013 2008",
+        "honor": "National Technical Honor Society-lid"
+      }
+    ]
+  },
+  "certifications": {
+    "heading": "Certificeringen",
+    "items": [
+      { "name": "Professional Scrum Master I", "issuer": "Scrum.org", "year": "2021" },
+      { "name": "Microsoft Technology Associate", "issuer": "Microsoft", "year": "2013" },
+      { "name": "CompTIA A+ & Network+", "issuer": "CompTIA", "year": "2007 & 2008" }
+    ]
+  },
+  "community": {
+    "heading": "Gemeenschap",
+    "items": [
+      { "name": "Snohomish County ACS", "description": "Auxiliary Communications Service" },
+      { "name": "Snohomish County SAR", "description": "Vrijwillige Zoek- en Reddingsdienst" },
+      { "name": "Sno-Isle Skills Center PAC", "description": "Programma Adviescomit\u00e9 \u00b7 CSN Curriculum" }
+    ]
+  }
+}

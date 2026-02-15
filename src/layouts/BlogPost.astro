@@ -4,13 +4,21 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Comments from '../components/Comments.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { defaultLang, type Lang } from '../i18n/config';
+import { t } from '../i18n/utils';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & { lang?: Lang };
 
-const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags = [], lang = defaultLang } = Astro.props;
+
+// Translate tags
+const translatedTags = tags.map((tag: string) => {
+  const translated = t(lang, 'blog', `tags.${tag}`);
+  return translated !== `tags.${tag}` ? translated : tag;
+});
 ---
 
-<BaseLayout title={title} description={description} image={heroImage} sideBarActiveItem="Blog">
+<BaseLayout title={title} description={description} image={heroImage} sideBarActiveItem="Blog" lang={lang}>
   <article>
     <!-- Post Header -->
     <header class="mb-8">
@@ -20,20 +28,20 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          <FormattedDate date={pubDate} />
+          <FormattedDate date={pubDate} lang={lang} />
         </div>
         {updatedDate && (
           <div class="flex items-center gap-2 italic">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            Updated: <FormattedDate date={updatedDate} />
+            {t(lang, 'ui', 'updated')} <FormattedDate date={updatedDate} lang={lang} />
           </div>
         )}
       </div>
-      {tags.length > 0 && (
+      {translatedTags.length > 0 && (
         <div class="flex flex-wrap gap-2 mt-4">
-          {tags.map((tag: string) => (
+          {translatedTags.map((tag: string) => (
             <span class="badge badge-outline badge-sm">{tag}</span>
           ))}
         </div>
@@ -61,6 +69,6 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [] } = Astro
     </div>
 
     <!-- Comments -->
-    <Comments />
+    <Comments lang={lang} />
   </article>
 </BaseLayout>

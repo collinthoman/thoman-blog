@@ -1,49 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HorizontalCard from '../components/HorizontalCard.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+// Root redirect — Cloudflare Function handles server-side Accept-Language detection.
+// This page is a client-side fallback for local dev and non-Cloudflare environments.
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} sideBarActiveItem="Home">
-  <div class="pb-8">
-    <p class="text-xl text-base-content/70">Hey there!</p>
-    <h1 class="text-5xl font-bold text-base-content mt-1">I am Collin Thoman</h1>
-    <p class="text-xl text-base-content/70 mt-1">IT Leader &middot; Tinkerer &middot; Amateur Radio Operator</p>
-    <p class="py-4 text-base-content/80 text-lg">
-      Technology is both my career and my passion. With 12+ years in IT &mdash; from hands-on engineering
-      to leading teams &mdash; I'm always learning and building, whether it's enterprise infrastructure,
-      Home Assistant automations, a private cloud, or this blog (built with Claude Code as a proof of concept).
-      When I'm not behind a keyboard, you'll find me overlanding in the Pacific Northwest, volunteering
-      with emergency communications, or hosting board game nights.
-    </p>
-  </div>
-
-  <div class="divider"></div>
-
-  <section>
-    <h2 class="text-2xl font-bold text-base-content mb-6">Latest Posts</h2>
-    {posts.map((post) => (
-      <HorizontalCard
-        title={post.data.title}
-        description={post.data.description}
-        href={`/blog/${post.id}/`}
-        pubDate={post.data.pubDate}
-        heroImage={post.data.heroImage}
-      />
-    ))}
-  </section>
-
-  <div class="flex justify-center mt-8">
-    <a href="/blog" class="btn btn-primary">
-      View All Posts
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-      </svg>
-    </a>
-  </div>
-</BaseLayout>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>
+      const lang = navigator.language?.startsWith('nl') ? 'nl' : 'en';
+      window.location.replace('/' + lang + '/');
+    </script>
+    <meta http-equiv="refresh" content="0;url=/en/" />
+  </head>
+  <body></body>
+</html>

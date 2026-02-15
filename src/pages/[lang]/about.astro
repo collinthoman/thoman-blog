@@ -1,12 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_TITLE } from '../consts';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { supportedLangs, type Lang } from '../../i18n/config';
+import { t } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return supportedLangs.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
 ---
 
-<BaseLayout title={`About | ${SITE_TITLE}`} description="About Collin Thoman - IT leader, amateur radio operator, and technology enthusiast based in Seattle" sideBarActiveItem="About">
+<BaseLayout title={`${t(lang, 'about', 'title')} | ${t(lang, 'ui', 'siteTitle')}`} description={t(lang, 'about', 'description')} sideBarActiveItem="About" lang={lang}>
   <div class="pb-2">
-    <h1 class="text-4xl font-bold text-base-content">About Me</h1>
-    <p class="text-lg text-base-content/70 mt-1">IT leader by day, tinkerer by nature</p>
+    <h1 class="text-4xl font-bold text-base-content">{t(lang, 'about', 'title')}</h1>
+    <p class="text-lg text-base-content/70 mt-1">{t(lang, 'about', 'subtitle')}</p>
   </div>
 
   <div class="divider"></div>
@@ -14,39 +21,22 @@ import { SITE_TITLE } from '../consts';
   <!-- Intro -->
   <section class="mb-10">
     <div class="prose prose-lg max-w-none">
-      <p class="text-base-content/80 leading-relaxed">
-        I'm Collin &mdash; an IT leader based in Seattle with 12+ years of experience building and managing
-        technology teams. For me, technology isn't just a career; it's a genuine passion. The same curiosity
-        that drives me to architect enterprise infrastructure at work has me tinkering with Home Assistant,
-        standing up a private cloud, or building this very blog with Claude Code on the weekends.
-      </p>
-      <p class="text-base-content/80 leading-relaxed">
-        I started my career at the Sno-Isle Skills Center studying Computers, Servers &amp; Networking, where I was
-        nominated and inducted into the <strong>National Technical Honor Society</strong>. From there, I went through
-        the ranks &mdash; Geek Squad field engineer, MSP consultant, system administrator &mdash; until I was promoted
-        into a management role that was created based on my performance. That journey taught me that great IT
-        leadership means staying close to the technical work while lifting the people around you.
-      </p>
+      <p class="text-base-content/80 leading-relaxed">{t(lang, 'about', 'intro1')}</p>
+      <p class="text-base-content/80 leading-relaxed" set:html={t(lang, 'about', 'intro2')} />
     </div>
   </section>
 
   <!-- What Drives Me -->
   <section class="mb-10">
-    <h2 class="text-2xl font-bold text-base-content mb-4">What Drives Me</h2>
+    <h2 class="text-2xl font-bold text-base-content mb-4">{t(lang, 'about', 'whatDrivesMe.heading')}</h2>
     <div class="prose prose-lg max-w-none">
-      <p class="text-base-content/80 leading-relaxed">
-        Community, education, and professional development matter deeply to me &mdash; both inside and outside the
-        workplace. I believe in investing in the next generation of IT professionals, which is why I serve on the
-        <strong>Program Advisory Committee (PAC)</strong> for the Sno-Isle Skills Center's CSN program. I was recruited
-        by my former teacher to join this committee of industry leaders who advise on curriculum and help shape
-        the program that gave me my own start. It's one of the most rewarding things I do.
-      </p>
+      <p class="text-base-content/80 leading-relaxed" set:html={t(lang, 'about', 'whatDrivesMe.text')} />
     </div>
   </section>
 
   <!-- Outside the Office -->
   <section class="mb-10">
-    <h2 class="text-2xl font-bold text-base-content mb-4">Outside the Office</h2>
+    <h2 class="text-2xl font-bold text-base-content mb-4">{t(lang, 'about', 'outsideOffice.heading')}</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="bg-base-200 rounded-xl p-5">
@@ -54,13 +44,9 @@ import { SITE_TITLE } from '../consts';
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <h3 class="text-base font-semibold text-base-content">Overlanding &amp; Dispersed Camping</h3>
+          <h3 class="text-base font-semibold text-base-content">{t(lang, 'about', 'outsideOffice.overlanding.title')}</h3>
         </div>
-        <p class="text-sm text-base-content/70 leading-relaxed">
-          There's nothing like loading up and heading off-grid to explore the Pacific Northwest. Dispersed
-          camping is my reset button &mdash; a way to disconnect from the busy world and reconnect with
-          nature, whether solo or with friends.
-        </p>
+        <p class="text-sm text-base-content/70 leading-relaxed">{t(lang, 'about', 'outsideOffice.overlanding.text')}</p>
       </div>
 
       <div class="bg-base-200 rounded-xl p-5">
@@ -68,13 +54,9 @@ import { SITE_TITLE } from '../consts';
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.858 15.355-5.858 21.213 0" />
           </svg>
-          <h3 class="text-base font-semibold text-base-content">Amateur Radio</h3>
+          <h3 class="text-base font-semibold text-base-content">{t(lang, 'about', 'outsideOffice.radio.title')}</h3>
         </div>
-        <p class="text-sm text-base-content/70 leading-relaxed">
-          Ham radio led me to volunteer with the Snohomish County Department of Emergency Management
-          through the Auxiliary Communications Service. The incident response and management skills
-          I've built there translate directly into how I handle IT incidents and crisis situations.
-        </p>
+        <p class="text-sm text-base-content/70 leading-relaxed">{t(lang, 'about', 'outsideOffice.radio.text')}</p>
       </div>
 
       <div class="bg-base-200 rounded-xl p-5">
@@ -82,13 +64,9 @@ import { SITE_TITLE } from '../consts';
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
-          <h3 class="text-base font-semibold text-base-content">Tech Projects</h3>
+          <h3 class="text-base font-semibold text-base-content">{t(lang, 'about', 'outsideOffice.tech.title')}</h3>
         </div>
-        <p class="text-sm text-base-content/70 leading-relaxed">
-          My career and personal passion for technology are one and the same. Off the clock, you'll find me
-          running Home Assistant, experimenting with private cloud setups, or building sites like this one
-          to explore new tools and frameworks.
-        </p>
+        <p class="text-sm text-base-content/70 leading-relaxed">{t(lang, 'about', 'outsideOffice.tech.text')}</p>
       </div>
 
       <div class="bg-base-200 rounded-xl p-5">
@@ -96,12 +74,9 @@ import { SITE_TITLE } from '../consts';
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <h3 class="text-base font-semibold text-base-content">Hosting &amp; Board Games</h3>
+          <h3 class="text-base font-semibold text-base-content">{t(lang, 'about', 'outsideOffice.hosting.title')}</h3>
         </div>
-        <p class="text-sm text-base-content/70 leading-relaxed">
-          I love cooking and hosting friends for board game nights. Good food, good company, and a
-          little friendly competition &mdash; that's a perfect evening.
-        </p>
+        <p class="text-sm text-base-content/70 leading-relaxed">{t(lang, 'about', 'outsideOffice.hosting.text')}</p>
       </div>
 
       <div class="bg-base-200 rounded-xl p-5 md:col-span-2">
@@ -109,44 +84,32 @@ import { SITE_TITLE } from '../consts';
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
           </svg>
-          <h3 class="text-base font-semibold text-base-content">Music &amp; Festivals</h3>
+          <h3 class="text-base font-semibold text-base-content">{t(lang, 'about', 'outsideOffice.music.title')}</h3>
         </div>
-        <p class="text-sm text-base-content/70 leading-relaxed">
-          When I'm not in the backcountry or behind a keyboard, you might find me at a rave or music
-          festival. It's a completely different kind of energy, and a great way to recharge.
-        </p>
+        <p class="text-sm text-base-content/70 leading-relaxed">{t(lang, 'about', 'outsideOffice.music.text')}</p>
       </div>
     </div>
   </section>
 
   <!-- What's Next -->
   <section class="mb-10">
-    <h2 class="text-2xl font-bold text-base-content mb-4">What's Next</h2>
+    <h2 class="text-2xl font-bold text-base-content mb-4">{t(lang, 'about', 'whatsNext.heading')}</h2>
     <div class="prose prose-lg max-w-none">
-      <p class="text-base-content/80 leading-relaxed">
-        I'm currently learning Dutch and exploring IT leadership opportunities in the Netherlands and
-        Belgium. With established connections in the Benelux region and a strong commitment to cultural
-        integration, I'm excited about the possibility of bringing my experience to the EMEA market.
-      </p>
-      <p class="text-base-content/80 leading-relaxed">
-        This blog is where I share what I'm learning along the way &mdash; from technical deep-dives
-        and project write-ups to thoughts on IT leadership and the occasional adventure story.
-      </p>
+      <p class="text-base-content/80 leading-relaxed">{t(lang, 'about', 'whatsNext.text1')}</p>
+      <p class="text-base-content/80 leading-relaxed">{t(lang, 'about', 'whatsNext.text2')}</p>
     </div>
   </section>
 
   <!-- Get In Touch -->
   <section class="mb-4">
-    <h2 class="text-2xl font-bold text-base-content mb-4">Get In Touch</h2>
-    <p class="text-base-content/70 mb-4">
-      I'm always happy to connect with fellow technologists, IT leaders, and anyone who shares similar interests.
-    </p>
+    <h2 class="text-2xl font-bold text-base-content mb-4">{t(lang, 'about', 'getInTouch.heading')}</h2>
+    <p class="text-base-content/70 mb-4">{t(lang, 'about', 'getInTouch.text')}</p>
     <div class="flex flex-wrap gap-3">
       <a href="mailto:Collin.Thoman@gmail.com" class="btn btn-outline btn-sm">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
-        Email
+        {t(lang, 'ui', 'email')}
       </a>
       <a href="https://www.linkedin.com/in/collinthoman/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">

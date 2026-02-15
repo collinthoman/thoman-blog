@@ -1,0 +1,43 @@
+{
+  "title": "Over mij",
+  "subtitle": "IT-leider overdag, hobbyist van nature",
+  "description": "Over Collin Thoman - IT-leider, zendamateur en technologie-enthousiasteling uit Seattle",
+  "intro1": "Ik ben Collin \u2014 een IT-leider uit Seattle met meer dan 12 jaar ervaring in het opbouwen en aansturen van technologieteams. Voor mij is technologie niet alleen een carri\u00e8re; het is een echte passie. Dezelfde nieuwsgierigheid die me drijft om bedrijfsinfrastructuur te ontwerpen op het werk, zorgt ervoor dat ik in het weekend aan het sleutelen ben met Home Assistant, een priv\u00e9cloud opzet, of dit blog bouw met Claude Code.",
+  "intro2": "Ik begon mijn carri\u00e8re bij het Sno-Isle Skills Center waar ik Computers, Servers & Networking studeerde, en waar ik genomineerd en opgenomen werd in de <strong>National Technical Honor Society</strong>. Daarna werkte ik me op \u2014 Geek Squad field engineer, MSP-consultant, systeembeheerder \u2014 totdat ik gepromoveerd werd naar een managementrol die speciaal voor mij gecre\u00eberd werd op basis van mijn prestaties. Die reis leerde me dat goed IT-leiderschap betekent dat je dicht bij het technische werk blijft en tegelijkertijd de mensen om je heen naar een hoger niveau tilt.",
+  "whatDrivesMe": {
+    "heading": "Wat mij drijft",
+    "text": "Gemeenschap, opleiding en professionele ontwikkeling zijn heel belangrijk voor mij \u2014 zowel binnen als buiten de werkplek. Ik geloof in investeren in de volgende generatie IT-professionals, daarom zit ik in het <strong>Program Advisory Committee (PAC)</strong> van het CSN-programma van het Sno-Isle Skills Center. Ik werd door mijn voormalige docent gevraagd om lid te worden van dit comit\u00e9 van industrieleiders die adviseren over het curriculum en helpen het programma te vormen dat mij mijn eigen start gaf. Het is een van de meest bevredigende dingen die ik doe."
+  },
+  "outsideOffice": {
+    "heading": "Buiten het kantoor",
+    "overlanding": {
+      "title": "Overlanding & wild kamperen",
+      "text": "Er gaat niets boven het inladen en off-grid gaan om de Pacific Northwest te verkennen. Wild kamperen is mijn resetknop \u2014 een manier om los te koppelen van de drukke wereld en opnieuw verbinding te maken met de natuur, alleen of met vrienden."
+    },
+    "radio": {
+      "title": "Zendamateur",
+      "text": "Amateurradio bracht me ertoe om vrijwilligerswerk te doen bij het Snohomish County Department of Emergency Management via de Auxiliary Communications Service. De vaardigheden in incidentrespons en -beheer die ik daar heb opgebouwd, vertalen zich direct naar hoe ik IT-incidenten en crisissituaties aanpak."
+    },
+    "tech": {
+      "title": "Technische projecten",
+      "text": "Mijn carri\u00e8re en persoonlijke passie voor technologie zijn \u00e9\u00e9n en hetzelfde. Buiten werktijd vind je me bezig met Home Assistant, aan het experimenteren met priv\u00e9cloud-opstellingen, of sites zoals deze aan het bouwen om nieuwe tools en frameworks te verkennen."
+    },
+    "hosting": {
+      "title": "Gastvrij zijn & bordspellen",
+      "text": "Ik hou van koken en vrienden ontvangen voor bordspellenavonden. Goed eten, goed gezelschap en een beetje vriendschappelijke competitie \u2014 dat is een perfecte avond."
+    },
+    "music": {
+      "title": "Muziek & festivals",
+      "text": "Als ik niet in de natuur ben of achter een toetsenbord zit, vind je me misschien op een rave of muziekfestival. Het is een heel ander soort energie, en een geweldige manier om op te laden."
+    }
+  },
+  "whatsNext": {
+    "heading": "Wat nu",
+    "text1": "Ik leer momenteel Nederlands en verken IT-leiderschapskansen in Nederland en Belgi\u00eb. Met bestaande connecties in de Benelux-regio en een sterke toewijding aan culturele integratie, ben ik enthousiast over de mogelijkheid om mijn ervaring naar de EMEA-markt te brengen.",
+    "text2": "Dit blog is waar ik deel wat ik onderweg leer \u2014 van technische deep-dives en projectverslagen tot gedachten over IT-leiderschap en af en toe een avonturenverhaal."
+  },
+  "getInTouch": {
+    "heading": "Neem contact op",
+    "text": "Ik maak graag verbinding met mede-technologen, IT-leiders en iedereen die vergelijkbare interesses deelt."
+  }
+}
