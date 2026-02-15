@@ -47,6 +47,14 @@ export function tArray(lang: Lang, namespace: string, key: string): string[] {
   return [];
 }
 
+/** Look up a nested translation key and return it as an array of objects (e.g. for structured data like jobs, skills) */
+export function tRawArray(lang: Lang, namespace: string, key: string): unknown[] {
+  const value = getNestedValue(translations[lang]?.[namespace], key)
+    ?? getNestedValue(translations[defaultLang]?.[namespace], key);
+  if (Array.isArray(value)) return value;
+  return [];
+}
+
 /** Look up a nested translation key and return it as an object */
 export function tObject(lang: Lang, namespace: string, key: string): Record<string, unknown> {
   const value = getNestedValue(translations[lang]?.[namespace], key)

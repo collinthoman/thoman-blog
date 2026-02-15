@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { supportedLangs, type Lang } from '../../i18n/config';
-import { t, tArray, tObject } from '../../i18n/utils';
+import { t, tRawArray } from '../../i18n/utils';
 
 export function getStaticPaths() {
   return supportedLangs.map((lang) => ({ params: { lang } }));
@@ -15,30 +15,15 @@ const glanceItems = ['years', 'users', 'budget', 'uptime'].map((key) => ({
   label: t(lang, 'cv', `glance.${key}.label`),
 }));
 
-const jobs = tArray(lang, 'cv', 'experience.jobs').length > 0
-  ? (JSON.parse(JSON.stringify(tObject(lang, 'cv', 'experience'))) as any).jobs as any[]
-  : [];
+const jobs = tRawArray(lang, 'cv', 'experience.jobs') as any[];
 
-const skillCategories = (() => {
-  const obj = tObject(lang, 'cv', 'skills.categories');
-  // It's an array stored as object
-  return Object.values(obj) as { name: string; items: string[] }[];
-})();
+const skillCategories = tRawArray(lang, 'cv', 'skills.categories') as { name: string; items: string[] }[];
 
-const educationItems = (() => {
-  const obj = tObject(lang, 'cv', 'education.items');
-  return Object.values(obj) as { name: string; institution: string; dates: string; honor: string }[];
-})();
+const educationItems = tRawArray(lang, 'cv', 'education.items') as { name: string; institution: string; dates: string; honor: string }[];
 
-const certItems = (() => {
-  const obj = tObject(lang, 'cv', 'certifications.items');
-  return Object.values(obj) as { name: string; issuer: string; year: string }[];
-})();
+const certItems = tRawArray(lang, 'cv', 'certifications.items') as { name: string; issuer: string; year: string }[];
 
-const communityItems = (() => {
-  const obj = tObject(lang, 'cv', 'community.items');
-  return Object.values(obj) as { name: string; description: string }[];
-})();
+const communityItems = tRawArray(lang, 'cv', 'community.items') as { name: string; description: string }[];
 ---
 
 <BaseLayout title={`${t(lang, 'ui', 'nav.cv')} | ${t(lang, 'ui', 'siteTitle')}`} description={t(lang, 'cv', 'description')} sideBarActiveItem="CV" lang={lang}>

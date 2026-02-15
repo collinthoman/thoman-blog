@@ -1,0 +1,5 @@
+/about    /en/about    301
+/cv       /en/cv       301
+/blog     /en/blog     301
+/blog/*   /en/blog/:splat  301
+/rss.xml  /en/rss.xml  301
