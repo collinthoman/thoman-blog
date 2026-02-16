@@ -7,7 +7,7 @@ Personal blog/portfolio built with Astro, Tailwind CSS, and DaisyUI. Designed to
 - **Framework**: Astro 5.x with MDX support
 - **Styling**: Tailwind CSS 4.x + DaisyUI 5.x
 - **Themes**: 8 DaisyUI themes (light, dark, cupcake, dracula, night, winter, nord, sunset)
-- **Comments**: Giscus (GitHub Discussions) - component ready, needs repo credentials
+- **Comments**: Giscus (GitHub Discussions) - fully configured in `src/components/Comments.astro`
 - **RSS**: Built-in at /rss.xml
 - **Deployment**: Cloudflare Pages (adapter installed)
 
@@ -16,36 +16,15 @@ Personal blog/portfolio built with Astro, Tailwind CSS, and DaisyUI. Designed to
 - **Repo**: https://github.com/collinthoman/thoman-blog
 - **Owner**: Collin Thoman (coolcolly)
 
-## Project Structure
+## Key Paths
 
-```
-src/
-├── components/
-│   ├── BaseHead.astro      # Meta tags, fonts, SEO
-│   ├── SideBar.astro       # Main navigation sidebar (edit NAV_ITEMS to add pages)
-│   ├── SideBarMenu.astro   # Navigation menu items
-│   ├── SideBarFooter.astro # Social links, copyright
-│   ├── HorizontalCard.astro # Blog post cards
-│   ├── Comments.astro      # Giscus comments (GitHub Discussions)
-│   └── FormattedDate.astro # Date formatting
-├── layouts/
-│   ├── BaseLayout.astro    # Main layout with sidebar drawer
-│   └── BlogPost.astro      # Individual blog post layout
-├── pages/
-│   ├── index.astro         # Home page (Dutch intro: "Ik ben Collin Thoman")
-│   ├── about.astro         # About page
-│   ├── cv.astro            # CV/Resume page (fully populated)
-│   └── blog/               # Blog listing and posts
-├── content/
-│   └── blog/               # Markdown/MDX blog posts
-├── styles/
-│   └── global.css          # Tailwind + DaisyUI config
-├── assets/
-│   └── profile.png         # Profile image for sidebar
-└── consts.ts               # Site title and description
-public/
-└── cv.pdf                  # Resume PDF (download button on CV page)
-```
+- `src/components/` — Astro components (sidebar, blog cards, comments, etc.)
+- `src/layouts/` — `BaseLayout.astro` (sidebar drawer) and `BlogPost.astro`
+- `src/pages/` — `index`, `about`, `cv`, `blog/`
+- `src/content/blog/` — Markdown/MDX blog posts
+- `src/styles/global.css` — Tailwind + DaisyUI theme config
+- `src/consts.ts` — Site title and description
+- `public/cv.pdf` — Resume PDF download
 
 ## Navigation
 
@@ -105,7 +84,7 @@ Post content here...
 2. **Profile image**: Replace `src/assets/profile.png` (referenced in `src/components/SideBar.astro`)
 3. **Social links**: Edit `src/components/SideBarFooter.astro`
 4. **Themes**: Modify theme list in `src/styles/global.css`
-5. **Comments**: Configure Giscus in `src/components/Comments.astro`
+5. **Comments**: Edit Giscus config in `src/components/Comments.astro`
 6. **CV content**: Edit `src/pages/cv.astro`
 
 ## Deployment (Cloudflare Pages)
@@ -115,14 +94,12 @@ Post content here...
 - **Build command**: `npm run build`
 - **Build output**: `dist`
 
-## Pending Setup
+## Workflow
 
-- [x] Push code to GitHub
-- [x] Add custom profile image to sidebar
-- [x] Update social media links
-- [x] Fill in CV with real information
-- [x] Add cv.pdf to public/ folder
-- [x] Deploy to Cloudflare Pages (live at https://thoman.dev)
-- [x] Configure Giscus comments (component exists but has placeholder credentials in `src/components/Comments.astro`)
+- Run `npm run build` after making changes to verify the build succeeds
+- Do not commit unless explicitly asked
+- Blog post frontmatter supports `tags` (string array) in addition to title, description, pubDate, heroImage
+
+## TODO
+
 - [ ] Create Projects page
-- [x] Remove unused legacy components (`Header.astro`, `HeaderLink.astro`, `ThemeToggle.astro`, `Footer.astro`)
