@@ -20,8 +20,9 @@ Personal blog/portfolio built with Astro, Tailwind CSS, and DaisyUI. Designed to
 
 - `src/components/` — Astro components (sidebar, blog cards, comments, etc.)
 - `src/layouts/` — `BaseLayout.astro` (sidebar drawer) and `BlogPost.astro`
-- `src/pages/` — `index`, `about`, `cv`, `blog/`
+- `src/pages/` — `index`, `404`, `[lang]/` routes (about, cv, blog)
 - `src/content/blog/` — Markdown/MDX blog posts
+- `src/i18n/` — i18n config, utils, and JSON translations (`en/`, `nl/`)
 - `src/styles/global.css` — Tailwind + DaisyUI theme config
 - `src/consts.ts` — Site title and description
 - `public/cv.pdf` — Resume PDF download
@@ -73,10 +74,17 @@ title: "Post Title"
 description: "Post description"
 pubDate: "Jan 24 2025"
 heroImage: "../assets/image.jpg"
+tags: ["tag1", "tag2"]
+lang: "en"
+translationKey: "my-post"
 ---
 
 Post content here...
 ```
+
+- `tags`, `heroImage`, `lang`, `translationKey` are optional
+- `lang` defaults to `"en"`; use `"nl"` for Dutch posts
+- `translationKey` links English and Dutch versions of the same post
 
 ## Customization Points
 
@@ -94,11 +102,22 @@ Post content here...
 - **Build command**: `npm run build`
 - **Build output**: `dist`
 
+## SpecKit
+
+This project uses SpecKit for feature specification and planning:
+
+- **Constitution**: `.specify/memory/constitution.md` (v1.0.0) — project principles and constraints
+- **Specs**: `specs/` — feature specifications, plans, tasks, and checklists
+- **Templates**: `.specify/templates/` — SpecKit document templates
+- **Commands**: `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.implement`, `/speckit.analyze`, `/speckit.constitution`
+
+All feature work MUST align with the constitution principles (Content-First, Performance & Simplicity, Build Integrity, Consistent Structure & Theming).
+
 ## Workflow
 
 - Run `npm run build` after making changes to verify the build succeeds
 - Do not commit unless explicitly asked
-- Blog post frontmatter supports `tags` (string array) in addition to title, description, pubDate, heroImage
+- All feature work should follow the SpecKit workflow: specify → plan → tasks → implement → analyze
 
 ## TODO
 
