@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "blog": "Blog",
+    "cv": "CV",
+    "about": "Over mij"
+  },
+  "siteTitle": "Collin Thoman",
+  "siteDescription": "Welkom op mijn persoonlijke blog!",
+  "readMore": "Lees meer",
+  "latestPosts": "Laatste berichten",
+  "viewAllPosts": "Bekijk alle berichten",
+  "updated": "Bijgewerkt:",
+  "comments": "Reacties",
+  "copyright": "Thoman Blog",
+  "downloadPdf": "PDF downloaden",
+  "blogHeading": "Blog",
+  "blogDescription": "Al mijn artikelen en gedachten op \u00e9\u00e9n plek.",
+  "email": "E-mail",
+  "getInTouch": "Neem contact op",
+  "notTranslated": "Dit bericht is nog niet beschikbaar in het Nederlands.",
+  "locale": "nl-NL"
+}

@@ -1,20 +1,23 @@
 ---
-import { SITE_TITLE } from '../consts';
 import SideBarMenu from './SideBarMenu.astro';
 import SideBarFooter from './SideBarFooter.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 import profileImage from '../assets/profile.png';
+import { defaultLang, type Lang } from '../i18n/config';
+import { t } from '../i18n/utils';
 
 interface Props {
   sideBarActiveItem?: string;
+  lang?: Lang;
 }
 
-const { sideBarActiveItem } = Astro.props;
+const { sideBarActiveItem, lang = defaultLang } = Astro.props;
 
 const NAV_ITEMS = [
-  { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'CV', href: '/cv' },
-  { name: 'About', href: '/about' },
+  { name: t(lang, 'ui', 'nav.home'), href: `/${lang}/` },
+  { name: t(lang, 'ui', 'nav.blog'), href: `/${lang}/blog` },
+  { name: t(lang, 'ui', 'nav.cv'), href: `/${lang}/cv` },
+  { name: t(lang, 'ui', 'nav.about'), href: `/${lang}/about` },
 ];
 ---
 
@@ -26,8 +29,7 @@ const NAV_ITEMS = [
         <img src={profileImage.src} alt="Collin Thoman" class="object-cover object-top" />
       </div>
     </div>
-    <h2 class="text-2xl font-bold text-base-content">{SITE_TITLE}</h2>
-    <!-- <p class="text-base-content/70 text-center mt-2">Welcome to my blog</p> -->
+    <h2 class="text-2xl font-bold text-base-content">{t(lang, 'ui', 'siteTitle')}</h2>
   </div>
 
   <!-- Navigation -->
@@ -47,11 +49,14 @@ const NAV_ITEMS = [
     </select>
   </div>
 
+  <!-- Language Switcher -->
+  <LanguageSwitcher lang={lang} currentPath={Astro.url.pathname} />
+
   <!-- Spacer -->
   <div class="flex-grow"></div>
 
   <!-- Footer -->
-  <SideBarFooter />
+  <SideBarFooter lang={lang} />
 </div>
 
 <script is:inline>

@@ -1,0 +1,133 @@
+{
+  "title": "Collin Thoman",
+  "jobTitle": "IT Service Management Leader",
+  "description": "Collin Thoman - IT Service Management Leader",
+  "location": "Seattle, WA",
+  "glance": {
+    "years": { "value": "12+", "label": "Years in IT" },
+    "users": { "value": "200+", "label": "Users Supported" },
+    "budget": { "value": "$2.5M", "label": "Budget Managed" },
+    "uptime": { "value": "99.9%", "label": "Uptime Maintained" }
+  },
+  "about": {
+    "heading": "About",
+    "text1": "I build and lead IT teams that deliver real business value. Over 12+ years I've grown from hands-on engineering into management, always staying close enough to the technical work to make informed decisions and mentor effectively. My approach blends ITIL discipline with agile flexibility \u2014 I care about service quality, security posture, and creating environments where people do their best work.",
+    "text2": "Currently learning Dutch and exploring IT leadership opportunities in the Netherlands/Belgium and Seattle regions. With established connections in the Benelux area and a strong commitment to cultural integration, I'm prepared for a transition to the EMEA market."
+  },
+  "experience": {
+    "heading": "Experience",
+    "keyAccomplishments": "Key Accomplishments",
+    "jobs": [
+      {
+        "title": "Information Technology Manager",
+        "dates": "Jul 2021 \u2013 Nov 2025",
+        "company": "Seed IP Law Group",
+        "location": "Seattle, WA",
+        "summary": "Led a team of six across help desk, systems, and security functions for a 186-person law firm. Owned the service delivery lifecycle, security program, and $2.5M annual IT budget while partnering with leadership to align technology investments with firm strategy.",
+        "accomplishments": [
+          "Built ITIL-aligned service catalog, SLA framework, and change management processes that measurably improved deployment success rates",
+          "Deployed multi-layer security stack (CrowdStrike EDR, Rapid7 SIEM, Mimecast, Cisco Meraki) enabling the firm to pass client security audits and unlock new revenue",
+          "Launched satisfaction surveys in Jira Service Management \u2014 achieved 4.8/5 rating and improved response times by 25%",
+          "Developed training programs and a knowledge repository for the IT team, supporting succession planning and professional growth",
+          "Managed vendor relationships, contract negotiations, and technology procurement, driving cost savings on renewals"
+        ]
+      },
+      {
+        "title": "System Administrator",
+        "dates": "Aug 2018 \u2013 Jul 2021",
+        "company": "Seed IP Law Group",
+        "location": "Seattle, WA",
+        "summary": "Managed enterprise infrastructure through rapid growth (140 to 186 users) and the firm's emergency COVID-19 remote transition. Performance in this role led to the creation of the IT Manager position.",
+        "accomplishments": [
+          "Led unified communications migration from on-prem Cisco to Zoom Phone/Meetings/Chat, achieving 100% adoption through hands-on training and change management",
+          "Replaced legacy VPN and DNS security (Pulse Secure, Cisco Umbrella) with Cloudflare Zero Trust, modernizing remote access",
+          "Migrated from Zendesk to Jira Service Management & Confluence with ITIL-aligned knowledge bases, cutting average resolution time by 10-15 minutes",
+          "Architected hybrid cloud environment (AWS EC2/VPC + Azure) with site-to-site VPN and redundant domain controllers for BCP/DR",
+          "Consolidated server footprint from 110 to 80 through strategic optimization, reducing operational costs",
+          "Spearheaded emergency transition to 100% remote work for 186 employees during COVID-19, leveraging pre-pandemic hardware standardization"
+        ]
+      },
+      {
+        "title": "IT Support Engineer",
+        "dates": "Dec 2015 \u2013 Aug 2018",
+        "company": "Nuvodia",
+        "location": "Spokane, WA",
+        "summary": "Delivered managed IT services and consulting across multiple client organizations. Served as the primary on-site engineer and trusted IT advisor, handling everything from Windows Server and SharePoint administration to MDM deployments and automation scripting.",
+        "accomplishments": [
+          "Built documentation and knowledge management systems that enabled team scalability across client engagements",
+          "Created automation scripts for software deployments, reducing deployment time and manual errors"
+        ]
+      },
+      {
+        "title": "IT Field Engineer / Event Manager",
+        "dates": "Aug 2010 \u2013 Jan 2016",
+        "company": "Geek Squad \u2013 Best Buy",
+        "location": "Greater Seattle Area",
+        "summary": "Started in residential and SMB IT support, then advanced to managing regional technology education events. Recruited and led teams of 20-35 temporary staff for events serving up to 200 youth participants, and built partnerships with non-profit organizations across the region.",
+        "accomplishments": []
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Skills",
+    "categories": [
+      {
+        "name": "Cloud & Infrastructure",
+        "items": ["AWS (EC2, VPC, S3)", "Azure", "VMware ESXi/vCenter", "Hybrid Cloud"]
+      },
+      {
+        "name": "Security & Compliance",
+        "items": ["Cloudflare Zero Trust", "CrowdStrike EDR", "Rapid7 IDR", "Mimecast", "Intune"]
+      },
+      {
+        "name": "Service Management",
+        "items": ["ITIL", "Agile / Scrum", "Jira Service Management", "Confluence", "Zendesk"]
+      },
+      {
+        "name": "Collaboration & Productivity",
+        "items": ["Microsoft 365", "Exchange Online", "SharePoint", "Zoom", "Power Platform", "iManage DMS"]
+      },
+      {
+        "name": "Networking",
+        "items": ["Cisco Meraki", "Cloudflare", "VPN / SD-WAN"]
+      },
+      {
+        "name": "Leadership",
+        "items": ["Team Development", "Strategic Planning", "Budget Management", "Vendor Relations", "Change Management"]
+      }
+    ]
+  },
+  "education": {
+    "heading": "Education",
+    "items": [
+      {
+        "name": "Information Technology Management & Administration",
+        "institution": "Western Governors University",
+        "dates": "2014 \u2013 2018",
+        "honor": ""
+      },
+      {
+        "name": "Computers, Servers & Networking",
+        "institution": "Sno-Isle Skills Center",
+        "dates": "2006 \u2013 2008",
+        "honor": "National Technical Honor Society inductee"
+      }
+    ]
+  },
+  "certifications": {
+    "heading": "Certifications",
+    "items": [
+      { "name": "Professional Scrum Master I", "issuer": "Scrum.org", "year": "2021" },
+      { "name": "Microsoft Technology Associate", "issuer": "Microsoft", "year": "2013" },
+      { "name": "CompTIA A+ & Network+", "issuer": "CompTIA", "year": "2007 & 2008" }
+    ]
+  },
+  "community": {
+    "heading": "Community",
+    "items": [
+      { "name": "Snohomish County ACS", "description": "Auxiliary Communications Service" },
+      { "name": "Snohomish County SAR", "description": "Volunteer Search and Rescue" },
+      { "name": "Sno-Isle Skills Center PAC", "description": "Program Advisory Committee \u00b7 CSN Curriculum" }
+    ]
+  }
+}
